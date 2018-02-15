@@ -1,25 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This README contain spec that application must fullfil
 # belilah
+USER
+1. merchant
+a. punya toko
+b. toko punya produk
+ b.1 list product using kaminari
+c. produk punya beberapa gambar
+ c.1 upload image using carrierwave
+2. customer
+  cart using shoppingcart
+3. admin
+a. gunakan gem activeadmin
+
+authorize using devise
+manage roles using rolify + cancan
+paymeny gateway using stripe/active merchant
+
