@@ -11,10 +11,9 @@ c. produk punya beberapa gambar
  c.1 upload image using carrierwave
 2. customer
   cart using shoppingcart
-3. admin
-a. gunakan gem activeadmin
+3. staf biasa
+dibatasi akses nya menggunakan cancan
 
 authorize using devise
 manage roles using rolify + cancan
 paymeny gateway using stripe/active merchant
-

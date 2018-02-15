@@ -4,8 +4,24 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
+gem 'bootstrap'
+#use for building ecommerce
+gem 'activeadmin'
 gem 'devise'
+# manage roles
+gem "cancan"
+gem "rolify"
+# listing
+gem 'kaminari'
+# upload image
+gem 'carrierwave'
+# payment gateway
+gem 'stripe'
+# cart
+gem 'acts_as_shopping_cart'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem "font-awesome-rails"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
