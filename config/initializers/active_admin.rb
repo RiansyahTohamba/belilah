@@ -4,9 +4,9 @@ ActiveAdmin.setup do |config|
     admin.site_title = 'Admin Site'
   end
 
-  # config.namespace :merchant do |super_admin|
-  #   merchant.site_title = 'Merchant Site'
-  # end
+  config.namespace :merchant do |merchant|
+    merchant.site_title = 'Merchant Site'
+  end
 
   config.comments = false
 

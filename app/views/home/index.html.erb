@@ -44,15 +44,23 @@
 									</ul>
 								</li>
 								<li class="account">
-									<a href="#">
-										My Account
-										<i class="fa fa-angle-down"></i>
-									</a>
-									<ul class="account_selection">
-                    <li><i class="fa fa-sign-in" aria-hidden="true"><%= link_to 'Sign In', new_admin_user_session_path %> </i></li>
-										<li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
-									</ul>
+										<% if user_signed_in? %>
+												<a href="#">
+													<%= current_user.name %>
+													<i class="fa fa-angle-down"></i>
+												</a>
+												<ul class="account_selection">
+													<li><%= link_to 'Sign Out', destroy_user_session_path, method: 'delete' %> </li>
+												</ul>
+										<% else %>
+											<%= link_to 'Sign In', new_user_session_path %>
+
+
 								</li>
+								<li class="account">
+									<%= link_to 'Sign Up', new_user_registration_path %>
+								</li>
+								<% end %>
 							</ul>
 						</div>
 					</div>
@@ -104,7 +112,7 @@
 	<div class="main_slider" style="background-image:url(<%= image_path("hijup.webp") %>)">
 		<div class="container fill_height">
 			<div class="row align-items-center fill_height">
-				
+
 			</div>
 		</div>
 	</div>

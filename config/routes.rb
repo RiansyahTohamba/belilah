@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users, :controllers => { registrations: 'registrations' }
   resources :merchants
   resources :products
   devise_for :admin_users, ActiveAdmin::Devise.config
