@@ -1,17 +1,19 @@
 ActiveAdmin.setup do |config|
-  config.site_title = 'Belilah'
+  config.default_namespace = :user_belilah
   config.namespace :admin do |admin|
     admin.site_title = 'Admin Site'
     admin.authentication_method = :authenticate_admin_user!
     admin.current_user_method = :current_admin_user
     admin.logout_link_path = :destroy_admin_user_session_path
+    user.root_to = 'dashboard#index'
   end
 
-  config.namespace :user do |user|
+  config.namespace :user_belilah do |user|
     user.site_title = 'User Site'
     user.authentication_method = :authenticate_user!
     user.current_user_method = :current_user
     user.logout_link_path = :destroy_user_session_path
+    user.root_to = 'products#index'
   end
   # kalau di name space masing-masing ,auth ini jadi bingung
   # config.authentication_method = :authenticate_admin_user!
@@ -124,7 +126,7 @@ ActiveAdmin.setup do |config|
   # roots for each namespace.
   #
   # Default:
-  # config.root_to = 'dashboard#index'
+
 
   #
   # You can change the name under which comments are registered:
