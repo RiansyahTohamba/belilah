@@ -2,14 +2,22 @@ ActiveAdmin.setup do |config|
   config.site_title = 'Belilah'
   config.namespace :admin do |admin|
     admin.site_title = 'Admin Site'
+    admin.authentication_method = :authenticate_admin_user!
+    admin.current_user_method = :current_admin_user
+    admin.logout_link_path = :destroy_admin_user_session_path
   end
 
   config.namespace :user do |user|
     user.site_title = 'User Site'
+    user.authentication_method = :authenticate_user!
+    user.current_user_method = :current_user
+    user.logout_link_path = :destroy_user_session_path
   end
-  config.authentication_method = :authenticate_admin_user!
-  config.current_user_method = :current_admin_user
-  config.logout_link_path = :destroy_admin_user_session_path
+  # kalau di name space masing-masing ,auth ini jadi bingung
+  # config.authentication_method = :authenticate_admin_user!
+  # config.current_user_method = :current_admin_user
+  # config.logout_link_path = :destroy_admin_user_session_path
+
 
   config.comments = false
 
