@@ -15,6 +15,7 @@ gem "rolify"
 gem 'kaminari'
 # upload image
 gem 'carrierwave'
+gem 'mini_magick'
 # payment gateway
 gem 'stripe'
 # cart

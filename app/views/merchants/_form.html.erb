@@ -1,3 +1,4 @@
+<br><br><br><br><br><br><br>
 <%= form_with(model: merchant, local: true) do |form| %>
   <% if merchant.errors.any? %>
     <div id="error_explanation">
@@ -18,7 +19,7 @@
 
   <div class="field">
     <%= form.label :image_url %>
-    <%= form.text_field :image_url, id: :merchant_image_url %>
+    <%= form.file_field :image_url, id: :merchant_image_url %>
   </div>
 
   <div class="field">

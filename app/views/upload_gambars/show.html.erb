@@ -1,0 +1,16 @@
+<br><br><br><br><br><br>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @upload_gambar.title %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= image_tag @upload_gambar.image_url %>
+</p>
+
+<%= link_to 'Edit', edit_upload_gambar_path(@upload_gambar) %> |
+<%= link_to 'Back', upload_gambars_path %>
