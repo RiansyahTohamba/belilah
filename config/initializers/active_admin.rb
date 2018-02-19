@@ -5,7 +5,7 @@ ActiveAdmin.setup do |config|
     admin.authentication_method = :authenticate_admin_user!
     admin.current_user_method = :current_admin_user
     admin.logout_link_path = :destroy_admin_user_session_path
-    user.root_to = 'dashboard#index'
+    admin.root_to = 'dashboard#index'
   end
 
   config.namespace :user_belilah do |user|
