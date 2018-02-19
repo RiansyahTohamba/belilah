@@ -8,4 +8,24 @@
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
 
-Product.create!(title: "sweater abu", description: "spesifikasi singkat aja ya gan / sis untuk produk ...", image_url: "product_10.png", price: 123) if Rails.env.development?
+Product.create!(title: "sweater abu", description: "spesifikasi singkat aja ya gan / sis untuk produk ...",
+  image_url: "product_10.png", price: 123) if Rails.env.development?
+
+Product.create!(title: "sweater lain", description: "spesifikasi singkat aja ya gan / sis untuk produk ...",
+  image_url: "single_2.jpg", price: 123) if Rails.env.development?
+
+Product.create!(title: "sweater abu", description: "spesifikasi singkat aja ya gan / sis untuk produk ...",
+  image_url: "product_10.png", price: 123) if Rails.env.development?
+
+Product.create!(title: "sweaterlain", description: "spesifikasi singkat aja ya gan / sis untuk produk ...", image_url: "product_7.png"
+  , price: 123) if Rails.env.development?
+
+Product.create!(title: "sweaterlain", description: "spesifikasi singkat aja ya gan / sis untuk produk ...", image_url: "product_7.png"
+  , price: 123) if Rails.env.development?
+
+Product.create!(title: "sweaterlain", description: "spesifikasi singkat aja ya gan / sis untuk produk ...", image_url: "product_7.png"
+  , price: 123) if Rails.env.development?
+
+
+  Product.create!(title: "sweater lain", description: "spesifikasi singkat aja ya gan / sis untuk produk ...",
+    image_url: "single_2.jpg", price: 123) if Rails.env.development?

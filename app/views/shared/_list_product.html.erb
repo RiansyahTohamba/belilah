@@ -42,7 +42,7 @@
 										<div class="product_price"><%= number_to_currency(product.price) %></div>
 									</div>
 								<div class="red_button add_to_cart_button">
-									<a href="#">add to cart</a>
+									<%= link_to 'Add to Cart', line_items_path(product_id: product) %>
 								</div>
 							</div>
 						<% end %>
