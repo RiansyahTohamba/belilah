@@ -1,5 +1,5 @@
 class ProductsController < InheritedResources::Base
-  
+  # tambahkan untuk list product
   private
 
     def product_params
