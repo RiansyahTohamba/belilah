@@ -1,4 +1,4 @@
-ActiveAdmin.register_page "Dashboard",namespace: :user_belilah do
+ActiveAdmin.register_page "Dashboard",namespace: :customers do
 
 end
 

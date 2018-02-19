@@ -11,7 +11,7 @@ ActiveAdmin.setup do |config|
 
   end
 
-  config.namespace :user_belilah do |user|
+  config.namespace :customers do |user|
     user.site_title = 'User Site'
     user.authentication_method = :authenticate_user!
     user.current_user_method = :current_user

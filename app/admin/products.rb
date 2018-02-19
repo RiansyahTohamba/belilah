@@ -1,4 +1,4 @@
-ActiveAdmin.register Product,namespace: :user_belilah do
+ActiveAdmin.register Product,namespace: :customers do
   permit_params :title, :price, :description, :image_url
   form(:html => { :multipart => true }) do |f|
     f.inputs "Product" do
