@@ -44,9 +44,10 @@
 									</ul>
 								</li>
 								<li class="account">
+
 										<% if user_signed_in? %>
 												<a href="#">
-													<%= current_user.name %>
+													<%= current_user.email %>
 													<i class="fa fa-angle-down"></i>
 												</a>
 												<ul class="account_selection">

@@ -1,11 +1,14 @@
 ActiveAdmin.setup do |config|
-  config.default_namespace = :user_belilah
+  # config.default_namespace = :user_belilah
+  # config.default_namespace = :admin
+  config.default_namespace = false
+
   config.namespace :admin do |admin|
     admin.site_title = 'Admin Site'
     admin.authentication_method = :authenticate_admin_user!
     admin.current_user_method = :current_admin_user
     admin.logout_link_path = :destroy_admin_user_session_path
-    admin.root_to = 'dashboard#index'
+
   end
 
   config.namespace :user_belilah do |user|
@@ -13,7 +16,10 @@ ActiveAdmin.setup do |config|
     user.authentication_method = :authenticate_user!
     user.current_user_method = :current_user
     user.logout_link_path = :destroy_user_session_path
-    user.root_to = 'products#index'
+
+    user.build_menu do |menu|
+      menu.add :label => 'Continue Shopping', :url => :root_path
+    end
   end
   # kalau di name space masing-masing ,auth ini jadi bingung
   # config.authentication_method = :authenticate_admin_user!
