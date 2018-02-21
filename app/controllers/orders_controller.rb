@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: [:new, :create]
   before_action :ensure_cart_isnt_empty, only: :new
-  before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :set_order, only: [:edit, :update, :destroy, :show]
 
   # GET /orders
   # GET /orders.json
@@ -13,6 +13,13 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+    format.html
+    # @is_paid = (@order.status == 1)
+    # if @is_paid
+    #   format.html { render :is_paid }
+    # elsif
+      # format.html { render :show }
+    # end
   end
 
   # GET /orders/new

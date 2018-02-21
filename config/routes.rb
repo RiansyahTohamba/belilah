@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :orders
+  get 'order/is_paid/:id', to: 'orders#is_paid', as: 'order_is_paid'
   resources :line_items
   resources :carts
   resources :charges
@@ -8,7 +9,7 @@ Rails.application.routes.draw do
   resources :upload_gambars
   resources :merchants
 
-  get '/product/:id', to: 'products#show', as: 'product'
+  get 'product/:id', to: 'products#show', as: 'product'
   get 'products/new_arrivals'
 
   get 'products/most_populars'
