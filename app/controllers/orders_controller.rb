@@ -13,13 +13,14 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
-    format.html
-    # @is_paid = (@order.status == 1)
-    # if @is_paid
-    #   format.html { render :is_paid }
-    # elsif
-      # format.html { render :show }
-    # end
+    respond_to do |format|
+      @is_paid = (@order.status == 1)
+      if @is_paid
+        format.html { render :is_paid }
+      elsif
+        format.html { render :show }
+      end
+    end
   end
 
   # GET /orders/new
