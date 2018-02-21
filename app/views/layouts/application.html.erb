@@ -61,7 +61,7 @@
     													<i class="fa fa-angle-down"></i>
     												</a>
     												<ul class="account_selection">
-    													<li><%= link_to 'Dashboard', user_belilah_dashboard_path, method: 'get' %> </li>
+    													<li><%= link_to 'Dashboard', customers_dashboard_path, method: 'get' %> </li>
     													<li><%= link_to 'Sign Out', destroy_user_session_path, method: 'delete' %> </li>
     												</ul>
     										<% else %>
@@ -98,13 +98,13 @@
                   </ul>
     							<ul class="navbar_user">
     								<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-    								<li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
     								<li class="checkout">
-    									<a href="#">
+
+    									<a href="<%= carts_path %>">
     										<i class="fa fa-shopping-cart" aria-hidden="true"></i>
                         <% if @cart %>
       										<span id="checkout_items" class="checkout_items">
-                              <%= @cart.count %>  
+                              <%= @cart.line_items.length %>
                           </span>
                         <% end %>
     									</a>
@@ -121,7 +121,7 @@
 
 
     	</header>
-
+<br><br><br><br><br><br>
     <%= yield %>
 
     	<!-- Footer -->

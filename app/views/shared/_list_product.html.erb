@@ -41,8 +41,9 @@
 										</h6>
 										<div class="product_price"><%= number_to_currency(product.price) %></div>
 									</div>
-								<div class="red_button add_to_cart_button">
-									<%= link_to 'Add to Cart', line_items_path(product_id: product) %>
+								<div class="add_to_cart_button">
+									<%= button_to 'Add to Cart', line_items_path(product_id: product),
+								        remote: true %>
 								</div>
 							</div>
 						<% end %>

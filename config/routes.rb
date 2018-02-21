@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
+  resources :orders
   resources :line_items
   resources :carts
-  get 'cart/index'
+  resources :charges
 
-  get 'cart/add_item'
-
-  get 'cart/remove_item'
-
-  get 'cart/empty'
 
   resources :upload_gambars
   resources :merchants

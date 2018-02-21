@@ -5,27 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
 
-Product.create!(title: "sweater abu", description: "spesifikasi singkat aja ya gan / sis untuk produk ...",
-  image_url: "product_10.png", price: 123) if Rails.env.development?
-
-Product.create!(title: "sweater lain", description: "spesifikasi singkat aja ya gan / sis untuk produk ...",
-  image_url: "single_2.jpg", price: 123) if Rails.env.development?
-
-Product.create!(title: "sweater abu", description: "spesifikasi singkat aja ya gan / sis untuk produk ...",
-  image_url: "product_10.png", price: 123) if Rails.env.development?
-
-Product.create!(title: "sweaterlain", description: "spesifikasi singkat aja ya gan / sis untuk produk ...", image_url: "product_7.png"
-  , price: 123) if Rails.env.development?
-
-Product.create!(title: "sweaterlain", description: "spesifikasi singkat aja ya gan / sis untuk produk ...", image_url: "product_7.png"
-  , price: 123) if Rails.env.development?
-
-Product.create!(title: "sweaterlain", description: "spesifikasi singkat aja ya gan / sis untuk produk ...", image_url: "product_7.png"
-  , price: 123) if Rails.env.development?
-
-
-  Product.create!(title: "sweater lain", description: "spesifikasi singkat aja ya gan / sis untuk produk ...",
-    image_url: "single_2.jpg", price: 123) if Rails.env.development?
+Product.create!(title: "sweater abu", description: "spesifikasi singkat aja ya gan / sis untuk produk, bagus banget lah pokoknya",price: 12)
+Product.create!(title: "sweater draxler", description: "spesifikasi singkat aja ya gan / sis untuk produk, bagus banget lah pokoknya",price: 3123)
+Product.create!(title: "sweater julian", description: "spesifikasi singkat aja ya gan / sis untuk produk, bagus banget lah pokoknya",price: 143)
+Product.create!(title: "sweater pogba", description: "spesifikasi singkat aja ya gan / sis untuk produk, bagus banget lah pokoknya",price: 123)
+Product.create!(title: "baju bagus", description: "spesifikasi singkat aja ya gan / sis untuk produk, bagus banget lah pokoknya",price: 123)
