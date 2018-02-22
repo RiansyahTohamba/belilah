@@ -22,7 +22,6 @@ gem 'mini_magick'
 # payment gateway
 gem 'stripe'
 # cart
-gem 'acts_as_shopping_cart'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem "font-awesome-rails"
