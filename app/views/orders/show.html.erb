@@ -77,6 +77,8 @@
               <script src="https://checkout.stripe.com/checkout.js"></script>
               <%= hidden_field_tag 'stripeToken' %>
               <%= hidden_field_tag 'stripeEmail' %>
+              <%= hidden_field_tag 'amount', 499 %>
+              <%= hidden_field_tag 'orderId', @order.id %>
               <button id="btn-buy" type="button" class="btn btn-primary">
                 Pay With Card
               </button>
@@ -94,7 +96,7 @@
                   handler.open({
                     name: 'Belilah',
                     description: 'Buy these thing',
-                    amount: 100000000
+                    amount: document.getElementById("amount").value
                   });
                   // amount in cent
                   e.preventDefault();

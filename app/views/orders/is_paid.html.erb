@@ -1,16 +1,21 @@
 <br>
 <div class="new_arrivals">
-  <div class="container">
+  <div class="container alert-success">
 
     <p>Thank you, your order has been placed
-    We've sent you an e-mail confirmation
-    Invoice Number :
-    Your orders will be delivered to #{address} . Estimated delivery : 10-03-2018
-    Review your order | detail link
-    continue shopping</p>
+    We've sent you an e-mail confirmation</p>
+    <p> Your orders will be delivered to <b><%= @order.address %></b>
+
+       Estimated delivery : <b>10-03-2018</b>
+    Review your order
+    </p>
+
   </div>
   <div class="container">
-    <h1 align='center'>Orders</h1>
+    <%= button_to "continue shopping", root_path, :method => "get" %>
+  </div>
+  <div class="container">
+    <h1 align='center'>Orders details</h1>
     <p id="notice"><%= notice %></p>
     <table>
       <tbody>
