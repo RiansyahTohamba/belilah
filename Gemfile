@@ -4,9 +4,11 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-gem "childprocess"
-gem "posix-spawn"
-gem "heroku-forward"
+# decrease request time
+# gem "heroku-forward"
+# gem "childprocess"
+# gem "posix-spawn"
+
 # generate code invoice
 gem 'foreman'
 gem 'bootstrap'
@@ -25,7 +27,7 @@ gem 'mini_magick'
 gem 'stripe'
 # cart
 gem 'jquery-rails'
-gem 'jquery-ui-rails'
+# gem 'jquery-ui-rails'
 gem "font-awesome-rails"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'

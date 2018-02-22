@@ -7,7 +7,7 @@ Rails.application.configure do
   config.cache_classes = false
 
   # using middleware rack
-  config.middleware.use Rails::Rack::LogTailer
+  # config.middleware.use Rails::Rack::LogTailer
 
   # Do not eager load code on boot.
   config.eager_load = false
