@@ -178,6 +178,7 @@ GEM
     polyamorous (1.3.3)
       activerecord (>= 3.0)
     popper_js (1.12.9)
+    posix-spawn (0.3.13)
     public_suffix (3.0.2)
     puma (3.11.2)
     rack (2.0.4)
@@ -292,6 +293,7 @@ DEPENDENCIES
   cancan
   capybara (~> 2.13)
   carrierwave
+  childprocess
   coffee-rails (~> 4.2)
   devise
   font-awesome-rails
@@ -304,6 +306,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   mini_magick
   pg (~> 0.18)
+  posix-spawn
   puma (~> 3.7)
   rails (~> 5.1.4)
   rails_12factor

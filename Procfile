@@ -1,1 +1,2 @@
-web: bin/rails server -p 3000
+web: bundle exec ruby config.ru
+worker: bundle exec rake jobs:work
