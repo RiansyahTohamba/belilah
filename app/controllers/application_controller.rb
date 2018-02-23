@@ -3,10 +3,15 @@ class ApplicationController < ActionController::Base
   def index
   end
   def after_sign_in_path_for(resource)
+    # begin
+    # rescue Exception => e
+    #   puts "****************************************"
+    #   puts e.message
+    # end
     if resource.class == AdminUser
       admin_dashboard_path
     elsif resource.class  == User
-      root_path
+      customers_dashboard_path
     end
   end
 end

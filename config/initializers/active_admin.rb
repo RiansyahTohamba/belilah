@@ -12,13 +12,14 @@ ActiveAdmin.setup do |config|
   end
 
   config.namespace :customers do |user|
-    user.site_title = 'User Site'
+
+    user.site_title = ->(context) { context.current_user.email }
     user.authentication_method = :authenticate_user!
     user.current_user_method = :current_user
     user.logout_link_path = :destroy_user_session_path
-
     user.build_menu do |menu|
       menu.add :label => 'Continue Shopping', :url => :root_path
+      #TODO: create session nama toko nya apa?
     end
   end
   # kalau di name space masing-masing ,auth ini jadi bingung

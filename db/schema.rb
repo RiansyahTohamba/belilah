@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180222011019) do
+ActiveRecord::Schema.define(version: 20180223041231) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -63,11 +63,7 @@ ActiveRecord::Schema.define(version: 20180222011019) do
   create_table "merchants", force: :cascade do |t|
     t.string "name"
     t.string "image_url"
-    t.text "description"
-    t.integer "products_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["products_id"], name: "index_merchants_on_products_id"
+    t.string "address"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -86,6 +82,8 @@ ActiveRecord::Schema.define(version: 20180222011019) do
     t.decimal "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "merchant_id"
+    t.index ["merchant_id"], name: "index_products_on_merchant_id"
   end
 
   create_table "purchases", force: :cascade do |t|
@@ -121,7 +119,9 @@ ActiveRecord::Schema.define(version: 20180222011019) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "merchant_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["merchant_id"], name: "index_users_on_merchant_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

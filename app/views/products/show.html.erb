@@ -36,6 +36,10 @@
         <div class="free_delivery d-flex flex-row align-items-center justify-content-center">
           <span class="ti-truck"></span><span>free delivery</span>
         </div>
+        <div align='center'>
+          <%= button_to 'Add to Cart', line_items_path(product_id: @product),
+          remote: true %>
+        </div>
         <div class="product_price"><%= number_to_currency(@product.price) %></div>
         <ul class="star_rating">
           <li><i class="fa fa-star" aria-hidden="true"></i></li>

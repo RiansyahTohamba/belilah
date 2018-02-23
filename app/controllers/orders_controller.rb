@@ -15,6 +15,7 @@ class OrdersController < ApplicationController
   def show
     respond_to do |format|
       @is_paid = (@order.status == 1)
+      # @order
       if @is_paid
         format.html { render :is_paid }
       elsif
