@@ -8,13 +8,14 @@ Rails.application.routes.draw do
 
   resources :upload_gambars
   resources :merchants
-
+  # resources :products, only: [:destroy]
   get 'product/:id', to: 'products#show', as: 'product'
-  get 'products/new_arrivals'
+  delete 'product/:id', to: 'products#destroy', as: 'product_destroy'
+  get 'products/new_arrivals', to: 'products#new_arrivals'
 
-  get 'products/most_populars'
+  get 'products/most_populars', to: 'products#most_populars'
 
-  get 'products/official_brands'
+  get 'products/official_brands', to: 'products#official_brands'
 
   root 'home#index'
 

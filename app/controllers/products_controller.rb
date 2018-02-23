@@ -1,6 +1,7 @@
 class ProductsController < InheritedResources::Base
   include CurrentCart
   before_action :set_cart
+  
 
   def new_arrivals
     @products = Product.order(:created_at).page(params[:page])

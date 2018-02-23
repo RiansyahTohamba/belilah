@@ -32,12 +32,20 @@
 					<div class="product-grid" data-isotope='{ "layoutMode": "fitRows" }'>
 						<% @products.each do |product| %>
 							<div class="product-item men">
+
 									<div class="product_image">
 										<img src="<%= image_path(product.image_url)%>" alt="">
 									</div>
+									<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+
+										<span class="delete_bubble"> <%= link_to 'delete', product, method: :delete,
+												data: { confirm: 'Are you sure?' } %>
+									  </span>
+									</div>
 									<div class="product_info">
 										<h6 class="product_name">
-											<%= link_to product.title, product %>
+											<%= link_to product.title, product %> <br>
+											<%= link_to product.merchant.name, product.merchant %>
 										</h6>
 										<div class="product_price"><%= number_to_currency(product.price) %></div>
 									</div>
