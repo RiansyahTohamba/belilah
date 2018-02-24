@@ -4,22 +4,19 @@ ActiveAdmin.register_page "Dashboard",namespace: :customers do
   content title: proc{ I18n.t("active_admin.dashboard") } do
 
     columns do
-      # column do
-      #   panel "Recent Order" do
-      #     ul do
-      #       # Order.recent(5).map do |order|
-      #       #   li link_to(order.id, order_path(ord))
-      #       # end
-      #     end
-      #   end
-      # end
-
       column do
 
-        panel "Info" do
-          para "Welcome #{current_user.email}"
+        panel "Recent Order" do
+
+          ul do
+            # Order.recent(5).map do |order|
+            #   li link_to(order.id, order_path(ord))
+            # end
+          end
         end
       end
+
+    
     end
   end
 end
