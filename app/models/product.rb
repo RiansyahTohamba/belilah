@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  paginates_per 5
+  paginates_per 10
   mount_uploader :image_url, ImageUploader
   has_many :line_items
   has_many :orders, through: :line_items

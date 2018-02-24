@@ -36,12 +36,13 @@
 									<div class="product_image">
 										<img src="<%= image_path(product.image_url)%>" alt="">
 									</div>
-									<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
-
-										<span class="delete_bubble"> <%= link_to 'delete', product, method: :delete,
-												data: { confirm: 'Are you sure?' } %>
-									  </span>
-									</div>
+										<% if can? :destroy, product%>
+											<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+												<span class="delete_bubble"> <%= link_to 'delete', product, method: :delete,
+															data: { confirm: 'Are you sure?' } %>
+												</span>
+											</div>
+										<% end %>
 									<div class="product_info">
 										<h6 class="product_name">
 											<%= link_to product.title, product %> <br>

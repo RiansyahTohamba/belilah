@@ -1,5 +1,5 @@
 ActiveAdmin.register Product,namespace: :customers do
-  permit_params :title, :price, :description, :image_url
+  permit_params :title, :price, :description, :image_url, :merchant_id
   scope_to :current_user
 
   index do
@@ -18,8 +18,9 @@ ActiveAdmin.register Product,namespace: :customers do
     f.inputs "Product" do
       f.input :title
       f.input :price
-      f.input :image_url, :as => :file, :hint => image_tag(f.object.image_url.url(:thumb))
+      f.input :image_url, :as => :file
       f.input :description
+      f.input :merchant_id, :input_html => {value: Merchant.new.get_id(current_user.id)} , as: :hidden
     end
     f.actions
   end
