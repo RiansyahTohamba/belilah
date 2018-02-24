@@ -14,4 +14,8 @@ class Product < ApplicationRecord
       throw :abort
     end
   end
+
+  # def product_from_order()
+  #   Product.find()
+  # end
 end

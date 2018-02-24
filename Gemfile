@@ -9,6 +9,7 @@ end
 # gem "childprocess"
 # gem "posix-spawn"
 
+gem 'hirb'
 # generate code invoice
 gem 'foreman'
 gem 'bootstrap'

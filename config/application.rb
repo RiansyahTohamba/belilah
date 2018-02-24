@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module Belilah
   class Application < Rails::Application
+    config.autoload_paths << config.root.join('lib')
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
     #use rails scaffolding generator

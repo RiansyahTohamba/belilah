@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :carts
   resources :charges
 
-
   resources :upload_gambars
   resources :merchants
   get 'product/:id', to: 'products#show', as: 'product'
@@ -17,8 +16,6 @@ Rails.application.routes.draw do
   get 'products/official_brands', to: 'products#official_brands'
 
   root 'home#index'
-
-
 
   devise_for :users, ActiveAdmin::Devise.config
   devise_for :admin_users, ActiveAdmin::Devise.config.merge(path: :admin)

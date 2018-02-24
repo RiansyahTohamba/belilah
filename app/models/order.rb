@@ -11,6 +11,6 @@ class Order < ApplicationRecord
     line_items.to_a.sum(&:total_price)
   end
   def recent
-    
+
   end
 end
