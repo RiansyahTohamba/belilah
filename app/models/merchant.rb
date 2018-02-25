@@ -5,6 +5,7 @@ class Merchant < ApplicationRecord
   def get_name(user_id)
     User.find(user_id).merchant.name
   end
+
   def get_id(user_id)
     User.find(user_id).merchant.id
   end

@@ -62,7 +62,8 @@
     												</a>
     												<ul class="account_selection">
     													<li><%= link_to 'Dashboard', customers_dashboard_path, method: 'get' %> </li>
-    													<li><%= link_to Merchant.new.get_name(current_user.id), customers_merchants_path, method: 'get' %> </li>
+
+    													<li><%= get_link_merchant(current_user.id) %> </li>
     													<li><%= link_to 'Sign Out', destroy_user_session_path, method: 'delete' %> </li>
     												</ul>
     										<% else %>

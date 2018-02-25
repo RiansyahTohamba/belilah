@@ -8,9 +8,10 @@
 
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
-
-Product.create!(title: "sweater abu", description: "spesifikasi singkat aja ya gan / sis untuk produk, bagus banget lah pokoknya",price: 12)
-Product.create!(title: "sweater draxler", description: "spesifikasi singkat aja ya gan / sis untuk produk, bagus banget lah pokoknya",price: 3123)
-Product.create!(title: "sweater julian", description: "spesifikasi singkat aja ya gan / sis untuk produk, bagus banget lah pokoknya",price: 143)
-Product.create!(title: "sweater pogba", description: "spesifikasi singkat aja ya gan / sis untuk produk, bagus banget lah pokoknya",price: 123)
-Product.create!(title: "baju bagus", description: "spesifikasi singkat aja ya gan / sis untuk produk, bagus banget lah pokoknya",price: 123)
+Merchant.create!(id: 1, name: "Rabbani",address: "Jl Cimahi")
+Merchant.create!(id: 2, name: "Adidas",address: "Jl Cimahi")
+Product.create!(title: "sweater abu", description: "spesifikasi singkat aja ya gan / sis untuk produk, bagus banget lah pokoknya",price: 12,merchant_id: 1)
+Product.create!(title: "sweater draxler", description: "spesifikasi singkat aja ya gan / sis untuk produk, bagus banget lah pokoknya",price: 3123,merchant_id: 2)
+Product.create!(title: "sweater julian", description: "spesifikasi singkat aja ya gan / sis untuk produk, bagus banget lah pokoknya",price: 143,merchant_id: 2)
+Product.create!(title: "sweater pogba", description: "spesifikasi singkat aja ya gan / sis untuk produk, bagus banget lah pokoknya",price: 123,merchant_id: 1)
+Product.create!(title: "baju bagus", description: "spesifikasi singkat aja ya gan / sis untuk produk, bagus banget lah pokoknya",price: 123,merchant_id: 1)
