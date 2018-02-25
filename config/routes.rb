@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :charges
 
   resources :upload_gambars
-  resources :merchants
+  resources :merchants, only: [:show]
   get 'product/:id', to: 'products#show', as: 'product'
   delete 'product/:id', to: 'products#destroy', as: 'product_destroy'
   get 'products/new_arrivals', to: 'products#new_arrivals'
