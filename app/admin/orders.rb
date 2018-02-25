@@ -1,33 +1,23 @@
 ActiveAdmin.register Order,namespace: :customers do
-  # scope_to :current_user
   permit_params :name, :address, :email, :status
   actions :index, :edit, :destroy, :show
 
-  # nanti user mengkonfirmasi dulu kalau barang siap dikirim
-# line_items discope sesuai produk miliknya user,
-# line item dihitung per satu-satu row
   controller do
       def scoped_collection
         # semua order intuk product_id: 38
         # User.find(current_user.id).products.find(38).orders
-        User.find(1).products.joins(:orders).select("order_id, product_id").where("orders.status = 1")
-        # kalau semua produk gimana caranya?
+        User.find(current_user.id).line_items.joins(:order)
+            .select("order_id as id,orders.name as buyer, orders.address,orders.created_at")
+            .where("orders.status = 1").group("order_id")
       end
   end
-  # index do
-  #   id_column
-  #   column "Buyer" do |order|
-  #     order.name
-  #   end
-  #   column :address
-  #   column "Product" do |order|
-  #     attributes_table_for order.line_items do
-  #       row :product_id
-  #     end
-  #   end
-  #
-  #   actions
-  # end
+  index do
+    id_column
+    column :buyer
+    column :address
+    column :created_at
+    actions
+  end
 
 end
 

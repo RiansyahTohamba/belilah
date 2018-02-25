@@ -3,7 +3,8 @@ class User < ApplicationRecord
   # di buat opsi true, agar merchant ga harus dibutuhkan saat di save
   belongs_to :merchant,optional: true
   has_many :products, through: :merchant
-  has_many :orders, through: :products
+  has_many :line_items, through: :products
+  has_many :orders, through: :line_items
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
