@@ -15,7 +15,7 @@
       <script src="https://checkout.stripe.com/checkout.js"></script>
       <%= hidden_field_tag 'stripeToken' %>
       <%= hidden_field_tag 'stripeEmail' %>
-      <%= hidden_field_tag 'amount', 499 %>
+      <%= hidden_field_tag 'amount', (@order.total_price * 100).to_i %>
       <%= hidden_field_tag 'orderId', @order.id %>
       <button id="btn-buy" type="button" class="btn btn-primary">
         Pay With Card
