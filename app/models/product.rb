@@ -5,7 +5,11 @@ class Product < ApplicationRecord
   has_many :orders, through: :line_items
   belongs_to :merchant
   before_destroy :ensure_not_referenced_by_any_line_item
-
+  def my_product?(product_id,user_id)
+    User.find(user_id).merchant.products.find(product_id).blank?
+    rescue ActiveRecord::RecordNotFound
+      true
+  end
   private
   # ensure that there are no line items referencing this product
   def ensure_not_referenced_by_any_line_item

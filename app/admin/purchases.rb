@@ -1,7 +1,11 @@
 ActiveAdmin.register Purchase,namespace: :customers  do
   actions :index, :destroy, :show
   scope_to :current_user
-
+  controller do
+    def resource
+       Order.new.detail_for_admin(current_user.id,params[:id])
+    end
+  end
   index do
     id_column
     column :amount , :sortable => :amount do |cur|
