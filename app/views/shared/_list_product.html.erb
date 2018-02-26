@@ -10,19 +10,6 @@
 				</div>
 			</div>
 
-			<!-- <div class="row align-items-center">
-				<div class="col text-center">
-					<div class="new_arrivals_sorting">
-						<ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">all</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".women">women's</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories">accessories</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">men's</li>
-						</ul>
-					</div>
-				</div>
-			</div> -->
-
 			<div class="row">
 				<%= paginate @products %>
 			</div>
@@ -51,8 +38,12 @@
 										<div class="product_price"><%= number_to_currency(product.price) %></div>
 									</div>
 								<div align='center' class="add_to_cart_button">
+									<% if user_signed_in? %>
 									<%= button_to 'Add to Cart', line_items_path(product_id: product),
 								        remote: true %>
+									<% else %>
+											<b>sign in to buy</b>
+									<% end %>
 								</div>
 							</div>
 						<% end %>

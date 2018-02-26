@@ -84,7 +84,7 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:name, :address, :email)
+      params.require(:order).permit(:name, :address)
     end
     def ensure_cart_isnt_empty
       if @cart.line_items.empty?

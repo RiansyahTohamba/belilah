@@ -1,12 +1,13 @@
 ActiveAdmin.register Order,namespace: :customers do
-  permit_params :name, :address, :email, :status
+  permit_params :name, :address, :status
   actions :index, :edit, :destroy, :show
 
   controller do
     def scoped_collection
-      User.find(current_user.id).line_items.joins(:order)
-          .select("order_id as id,orders.name as buyer, orders.address,orders.created_at")
-          .where("orders.status = 1").group("order_id")
+       Order.new.recent(current_user.id)
+    end
+    def resource
+       Order.new.detail_for_admin(current_user.id,params[:id])
     end
   end
   index do
@@ -16,7 +17,15 @@ ActiveAdmin.register Order,namespace: :customers do
     column :created_at
     actions
   end
-
+  show do
+    attributes_table do
+      row :buyer
+      row :product_name
+      # row "Product" do |p|
+      #   table_for
+      # end
+    end
+  end
 end
 
 ActiveAdmin.register Order,namespace: :admin do

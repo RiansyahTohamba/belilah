@@ -15,7 +15,4 @@ class Product < ApplicationRecord
     end
   end
 
-  # def product_from_order()
-  #   Product.find()
-  # end
 end

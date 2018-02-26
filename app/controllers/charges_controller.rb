@@ -1,6 +1,5 @@
 class ChargesController < ApplicationController
   def create
-    # Amount in cents
     customer = Stripe::Customer.create(
       email: params[:stripeEmail],
       source: params[:stripeToken]
@@ -14,10 +13,14 @@ class ChargesController < ApplicationController
     )
 
     order_is_paid = Order.find(params[:orderId]).update(status: 1)
-    Purchase.create(email: params[:stripeEmail], card: params[:stripeToken],
+    Purchase.create(email: params[:emailUser],
+                    card: params[:stripeToken],
                     amount: params[:amount], description: charge.description,
                     currency: charge.currency,
-                    customer_id: customer.id, product_id: 1)
+                    customer_id: customer.id,
+                    order_id: params[:orderId],
+                    user_id: current_user.id
+                  )
     redirect_to order_path(params[:orderId])
   rescue Stripe::CardError => e
     flash[:error] = e.message
