@@ -1,24 +1,32 @@
-<p id="notice"><%= notice %></p>
+<div class="container single_product_container">
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="single_product_pics">
+        <div class="row">
+          <div class="col-lg-3 image_col order-lg-2 order-1">
+            <div class="single_product_image">
+              <%= image_tag @merchant.image_url %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="product_details">
+        <div class="">
+          <h2><%= @merchant.name %></h2>
+          <p><%= @merchant.description %> 
+          </p>
+        </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @merchant.name %>
-</p>
+      </div>
 
-<p>
-  <strong>Image url:</strong>
-  <%= image_tag @merchant.image_url.thumb.url %>
-</p>
+    </div>
+  </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @merchant.description %>
-</p>
 
-<p>
-  <strong>Products:</strong>
-  <%= @merchant.products %>
-</p>
+</div>
+<div style="margin-top : -400px">
+  <%= render(partial: "shared/list_product") %>
 
-<%= link_to 'Edit', edit_merchant_path(@merchant) %> |
-<%= link_to 'Back', merchants_path %>
+</div>

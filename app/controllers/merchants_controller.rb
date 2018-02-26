@@ -13,7 +13,10 @@ class MerchantsController < InheritedResources::Base
       end
     end
   end
-
+  def show
+    @products = Merchant.new.our_product(params[:id]).page(params[:page])
+    @merchant = Merchant.find(params[:id])
+  end
   private
 
     def merchant_params

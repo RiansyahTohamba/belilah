@@ -29,7 +29,7 @@ ActiveAdmin.register Order,namespace: :customers do
 end
 
 ActiveAdmin.register Order,namespace: :admin do
-  permit_params :name, :address, :email, :status
+  permit_params :name, :address, :status
   index do
     id_column
     column "Buyer" do |order|

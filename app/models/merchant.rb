@@ -11,4 +11,7 @@ class Merchant < ApplicationRecord
     User.find(user_id).merchant.id
   end
 
+  def our_product(merchant_id)
+    Merchant.find(merchant_id).products.order(:created_at)
+  end
 end
