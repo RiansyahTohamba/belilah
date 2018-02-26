@@ -3,7 +3,7 @@ ActiveAdmin.register Purchase,namespace: :customers  do
   scope_to :current_user
   controller do
     def resource
-       Order.new.detail_for_admin(current_user.id,params[:id])
+       Purchase.new.detail_for_buyer(current_user.id,params[:id])
     end
   end
   index do
