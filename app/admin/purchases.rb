@@ -6,18 +6,26 @@ ActiveAdmin.register Purchase,namespace: :customers  do
        Purchase.new.detail_for_buyer(current_user.id,params[:id])
     end
   end
+
+
   show do
     attributes_table do
       row :amount , :sortable => :amount do |cur|
           number_to_currency cur.amount
       end
       row :product_name
+      row :price , :sortable => :price do |cur|
+          number_to_currency cur.price
+      end
+      row :card
+      row :created_at
+      row :updated_at
     end
   end
   index do
     id_column
-    column :amount , :sortable => :amount do |cur|
-            number_to_currency cur.amount
+    column :amount, sortable: :amount do |cur|
+      number_to_currency cur.amount
     end
     column :card
     column :created_at

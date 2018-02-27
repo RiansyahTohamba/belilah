@@ -1,29 +1,34 @@
 ActiveAdmin.register Order,namespace: :customers do
   permit_params :name, :address, :status
   actions :index, :edit, :destroy, :show
-
   controller do
     def scoped_collection
        Order.new.recent(current_user.id)
     end
     def resource
-       Order.new.detail_for_admin(current_user.id,params[:id])
+       @order = Order.find(params[:id])
     end
   end
   index do
-    id_column
-    column :buyer
-    column :address
-    column :created_at
-    actions
+      id_column
+      column :buyer
+      column :address
+      column :created_at
+      actions
   end
   show do
     attributes_table do
-      row :buyer
-      row :product_name
-      # row "Product" do |p|
-      #   table_for
-      # end
+      row :name
+      row :created_at
+      row :updated_at
+    end
+    panel "Line Items" do
+      table_for order.line_items do
+        column "Product name" do |line|
+          line.product.title
+        end
+        column :quantity
+      end
     end
   end
 end
