@@ -11,5 +11,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-
+  def as_merchant(user_id)
+    User.joins(:merchant)
+        .select("merchants.id, merchants.name,description,address,merchants.image_url")
+        .where("users.id = #{user_id}")
+  end
 end

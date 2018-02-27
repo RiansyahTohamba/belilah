@@ -1,5 +1,4 @@
 class MerchantsController < InheritedResources::Base
-  # masalahnya bagaimana cara simpan product Id yang ada di merchant nanti
   def create
     @merchant = Merchant.new(merchant_params)
 
