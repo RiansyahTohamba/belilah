@@ -24,8 +24,11 @@ ActiveAdmin.register Order,namespace: :customers do
     end
     panel "Line Items" do
       table_for order.line_items do
-        column "Product name" do |line|
+        column :product do |line|
           line.product.title
+        end
+        column :price , :sortable => :price do |line|
+          number_to_currency line.product.price
         end
         column :quantity
       end
