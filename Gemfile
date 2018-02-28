@@ -9,8 +9,16 @@ end
 # gem "childprocess"
 # gem "posix-spawn"
 
+# generate pdf
+gem 'wicked_pdf'
+#we need the new binary here, so that we can be OS independent
+gem 'wkhtmltopdf-binary', github: 'pallymore/wkhtmltopdf-binary-edge', tag: 'v0.12.2'
+
+# sidekiq + sinatra
 gem 'sidekiq'
-gem 'sinatra', github: 'sinatra/sinatra'
+# gem 'sinatra', github: 'sinatra/sinatra'
+gem 'sinatra'
+# generate good looking ARecord
 gem 'hirb'
 # generate code invoice
 gem 'foreman'
@@ -58,6 +66,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 group :production do
+  gem 'exception_notification'
   gem 'pg','~> 0.18'
   gem 'rails_12factor'
   gem 'activerecord-postgresql-adapter'
