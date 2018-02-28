@@ -1,2 +1,0 @@
-module UploadGambarsHelper
-end

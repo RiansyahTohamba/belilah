@@ -30,10 +30,20 @@ Rails.application.configure do
   end
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  config.action_mailer.delivery_method = :smtp
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
 
+  # Don't care if the mailer can't send.
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => 'smtp.gmail.com',
+    :domain => 'mail.gmail.com',
+    :port => 587,
+    :user_name => "riansmtp@gmail.com",
+    :password => "smtptauhid",
+    :authentication => "login",
+    :enable_starttls_auto => true
+  }
+  
   config.action_mailer.perform_caching = false
 
   # Print deprecation notices to the Rails logger.

@@ -13,18 +13,10 @@ module Belilah
     config.load_defaults 5.1
     #use rails scaffolding generator
     config.app_generators.scaffold_controller = :scaffold_controller
-
+    config.active_job.queue_adapter = :sidekiq
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
-    ActionMailer::Base.smtp_settings = {
-      :address => 'smtp.gmail.com',
-      :domain => 'mail.gmail.com',
-      :port => 587,
-      :user_name => "riansmtp@gmail.com",
-      :password => "smtptauhid",
-      :authentication => "login",
-      :enable_starttls_auto => true
-    }
+
   end
 end

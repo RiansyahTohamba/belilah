@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :carts
   resources :charges
 
-  resources :upload_gambars
   resources :merchants, only: [:show]
   get 'product/:id', to: 'products#show', as: 'product'
   delete 'product/:id', to: 'products#destroy', as: 'product_destroy'

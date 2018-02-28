@@ -9,6 +9,8 @@ end
 # gem "childprocess"
 # gem "posix-spawn"
 
+gem 'sidekiq'
+gem 'sinatra', github: 'sinatra/sinatra'
 gem 'hirb'
 # generate code invoice
 gem 'foreman'
