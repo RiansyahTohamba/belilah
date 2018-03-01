@@ -13,7 +13,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 
-%w( home products orders  ).each do |controller|
+%w( cart carts charges customer home line_items merchants orders products registration   ).each do |controller|
   # Rails.application.config.assets.precompile += ["#{controller}.js", "#{controller}.css"]
   Rails.application.config.assets.precompile += ["#{controller}.css"]
 end
