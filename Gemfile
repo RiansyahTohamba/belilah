@@ -4,15 +4,10 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-# decrease request time
-# gem "heroku-forward"
-# gem "childprocess"
-# gem "posix-spawn"
-
 # generate pdf
 gem 'wicked_pdf'
 #we need the new binary here, so that we can be OS independent
-gem 'wkhtmltopdf-binary', github: 'pallymore/wkhtmltopdf-binary-edge', tag: 'v0.12.2'
+gem 'wkhtmltopdf-binary'
 
 # sidekiq + sinatra
 gem 'sidekiq'

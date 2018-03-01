@@ -16,9 +16,9 @@
 			<div class="row">
 
 				<div class="col">
-					<div class="product-grid" data-isotope='{ "layoutMode": "fitRows" }'>
+					<div class="product-grid" >
 						<% @products.each do |product| %>
-							<div class="product-item men">
+							<div class="product-item" style="">
 
 									<div class="product_image">
 										<img src="<%= image_path(product.image_url)%>" alt="">

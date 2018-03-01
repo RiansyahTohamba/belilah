@@ -18,12 +18,7 @@ class OrdersController < ApplicationController
       # @order
       if @is_paid
         email_to = 'riansyah@41studio.com' #TODO: di order nanti tambahkan email pengirim
-        # UserMailer.purchase_mail(@order,email_to).deliver_later
-        format.pdf do
-          render pdf: "receipt",
-          template: "user_mailer/show.html.erb",
-          layout: "pdf.html"
-        end
+        UserMailer.purchase_mail(@order,email_to).deliver_later
         format.html { render :is_paid }
       elsif
         format.html { render :show }
