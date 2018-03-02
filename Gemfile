@@ -10,9 +10,8 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 
 # sidekiq + sinatra
-gem 'sidekiq'
-# gem 'sinatra', github: 'sinatra/sinatra'
-gem 'sinatra'
+# gem 'sidekiq'
+# gem 'sinatra'
 # generate good looking ARecord
 gem 'hirb'
 # generate code invoice
